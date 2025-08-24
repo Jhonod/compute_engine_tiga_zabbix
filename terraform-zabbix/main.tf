@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "gcs" {
-    bucket = "your-tfstate-bucket"
+    bucket = "bucket-akmal-state-20250815"
     prefix = "zabbix"
   }
 }
