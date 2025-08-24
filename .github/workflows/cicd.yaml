@@ -22,9 +22,12 @@ jobs:
 
       - name: Init Terraform
         run: terraform init
+        working-directory: terraform-zabbix
 
       - name: Plan Terraform
         run: terraform plan -out=tfplan
+        working-directory: terraform-zabbix
 
       - name: Apply Terraform
         run: terraform apply -auto-approve tfplan
+        working-directory: terraform-zabbix
