@@ -47,8 +47,9 @@ jobs:
           for script in terraform-zabbix/scripts/*.sh; do
             echo "Running $script ..."
             bash "$script"
-          done
+          
       - name: Run Zabbix DB installer
         run: |
          chmod +x terraform-zabbix/scripts/*.sh
          sudo terraform-zabbix/scripts/install_zabbix_db.sh
+           done
