@@ -1,4 +1,6 @@
-variable "project_id" {}
+variable "project_id" {
+  default = "arboreal-cosmos-440011-r8"
+}
 variable "region" {
   default = "asia-southeast2"
 }
