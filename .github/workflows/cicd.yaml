@@ -40,7 +40,7 @@ jobs:
       - name: Apply Terraform
         run: terraform apply -auto-approve tfplan
         working-directory: terraform-zabbix
-        
+
       - name: Run custom scripts
         run: |
           chmod +x terraform-zabbix/scripts/*.sh
@@ -48,3 +48,7 @@ jobs:
             echo "Running $script ..."
             bash "$script"
           done
+      - name: Run Zabbix DB installer
+        run: |
+         chmod +x terraform-zabbix/scripts/*.sh
+         sudo terraform-zabbix/scripts/install_zabbix_db.sh
