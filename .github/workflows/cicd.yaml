@@ -41,15 +41,10 @@ jobs:
         run: terraform apply -auto-approve tfplan
         working-directory: terraform-zabbix
 
-      - name: Run custom scripts
-        run: |
-          chmod +x terraform-zabbix/scripts/*.sh
-          for script in terraform-zabbix/scripts/*.sh; do
-            echo "Running $script ..."
-            bash "$script"
-          
-      - name: Run Zabbix DB installer
+      - name: Run provisioning scripts
         run: |
          chmod +x terraform-zabbix/scripts/*.sh
-         sudo terraform-zabbix/scripts/install_zabbix_db.sh
-           done
+         for script in terraform-zabbix/scripts/*.sh; do
+         echo "Running $script ..."
+         bash "$script"
+         done
