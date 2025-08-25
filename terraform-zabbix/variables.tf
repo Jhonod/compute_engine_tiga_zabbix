@@ -11,7 +11,7 @@ variable "machine_type" {
   default = "e2-medium"
 }
 variable "image_family" {
-  default = "ubuntu-2404-lts"
+  default = "ubuntu-2204-lts"
 }
 variable "image_project" {
   default = "ubuntu-os-cloud"
